@@ -27,7 +27,11 @@ phases:
       - echo old artifact was target/dev-lab5-0.0.1-SNAPSHOT.jar changed to build*/**
       - echo `pwd`
       - echo `ls`
+      - cd target
+      - echo `pwd`
+      - echo `ls`
+      
 artifacts:
   files:
-    - dev_lab5/dev-lab5-0.0.1-SNAPSHOT.jar
+    - target/dev-lab5-0.0.1-SNAPSHOT.jar
     
