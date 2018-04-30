@@ -30,6 +30,7 @@ phases:
       - cd target
       - echo `pwd`
       - echo `ls`
+      - cd ..
       
 artifacts:
   files:
