@@ -4,6 +4,7 @@ phases:
   pre_build:
     commands:
       - echo starting pre_build `date`
+      - cd dev-lab5
       - echo Delete target Directory - mvn clean - not needed is clean because codebuild creates new
       - echo Validate project correctness
       - mvn validate      
