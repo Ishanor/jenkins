@@ -3,20 +3,27 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Preparing build `date`
+      - echo starting pre_build `date`
+      - echo Delete target Directory
+      - mvn clean
+      - echo Validate project correctness
+      - mvn validate      
   build:
     commands:
-      - mvn clean
+      - echo Installing package into local Repository
       - mvn install
+      - echo compiling source code, classes stored in target/classes
       - mvn compile
+      - echo packaging into distributable format, e.g. JAR, WAR
+      - mvn package
   post_build:
     commands:
-      - echo Build completed on `date` creating package for deployment, not yet implemented
-      - mvn package
-  test:
-    commands:
-      - echo starting test `date`
+      - echo running tests
       - mvn test
+      - echo verify that package complies with quality criteria
+      - mvn verify
+      - echo deploy — copies the final package to the remote repository - not yet implemented    
+      - echo build complete `date`
 artifacts:
   files:
     - target/dev-lab5-0.0.1-SNAPSHOT.jar
