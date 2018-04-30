@@ -24,7 +24,8 @@ phases:
       - mvn verify
       - echo deploy — copies the final package to the remote repository - not yet implemented    
       - echo build complete `date`
+      - echo old artifact was target/dev-lab5-0.0.1-SNAPSHOT.jar changed to build*/**
 artifacts:
   files:
-    - target/dev-lab5-0.0.1-SNAPSHOT.jar
+    - build*/**
     
